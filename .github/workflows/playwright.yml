@@ -1,0 +1,14 @@
+name: TDS Tables (23f3001502@ds.study.iitm.ac.in)
+on: [push]
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with: { node-version: 20 }
+    - run: npm install
+    - uses: microsoft/playwright-github-action@v1
+      name: Install Playwright (23f3001502@ds.study.iitm.ac.in)
+    - run: node scrape.js
+      name: Scrape sums (23f3001502@ds.study.iitm.ac.in)
