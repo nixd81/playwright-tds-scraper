@@ -1,0 +1,25 @@
+name: TDS Table Sums - Playwright (23f3001502@ds.study.iitm.ac.in)
+
+on: [push]
+
+jobs:
+  scrape:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js (23f3001502@ds.study.iitm.ac.in)
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+    
+    - name: Install deps (23f3001502@ds.study.iitm.ac.in)
+      run: npm ci
+    
+    - name: Install Playwright (23f3001502@ds.study.iitm.ac.in)
+      run: npx playwright install --with-deps chromium
+    
+    - name: Scrape & sum tables (23f3001502@ds.study.iitm.ac.in)
+      run: npm run scrape
