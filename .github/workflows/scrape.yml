@@ -16,10 +16,10 @@ jobs:
         cache: 'npm'
     
     - name: Install deps (23f3001502@ds.study.iitm.ac.in)
-      run: npm ci
+      run: npm install  # ← CHANGED: npm install instead of npm ci
     
     - name: Install Playwright (23f3001502@ds.study.iitm.ac.in)
       run: npx playwright install --with-deps chromium
     
     - name: Scrape & sum tables (23f3001502@ds.study.iitm.ac.in)
-      run: npm run scrape
+      run: node scrape.js
