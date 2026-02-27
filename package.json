@@ -1,10 +1,8 @@
+
 {
-  "name": "playwright-tds-scraper",
+  "name": "tds-scraper",
   "version": "1.0.0",
-  "scripts": {
-    "scrape": "node scrape.js"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.48.0"
+  "dependencies": {
+    "playwright": "^1.48.0"
   }
 }
